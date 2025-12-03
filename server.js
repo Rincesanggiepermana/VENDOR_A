@@ -103,8 +103,10 @@ app.get('/', (req, res) => {
 res.send("API Vendor A (Express + Neon + Vercel) is running!");
 });
 
-app.listen(PORT, () => {
-console.log(`Server berjalan di port ${PORT}`);
-});
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`Server berjalan di port ${PORT}`);
+    });
+}
 
 module.exports = app;
