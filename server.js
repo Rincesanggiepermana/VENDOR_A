@@ -103,6 +103,12 @@ app.delete('/api/vendorA/:id', async (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Server berjalan di http://localhost:${PORT}/api/vendorA`);
+app.get('/',  (req, res) => {
+    res.send('API Vendor C (Neon DB) is running cuy');
 });
+
+app.listen(PORT, () =>{
+    console.log(`Server berjalan di port ${PORT}`);
+});
+
+module.exports = app;
